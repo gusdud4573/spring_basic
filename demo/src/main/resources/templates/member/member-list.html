@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Registration</title>
+</head>
+<body>
+<h1>Member List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th> <!-- Add an empty table header for the button column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "member : ${memberList}">
+      <td th:text = "${member.id}"></td>
+      <td th:text = "${member.name}"></td>
+      <td th:text = "${member.email}"></td>
+      <td><a th:href = "@{/member(id=${member.id})}" >Details</a></td>
+    </tr>
+</tbody>
+</table>
+</body>
+</html>

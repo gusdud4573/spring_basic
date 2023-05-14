@@ -4,6 +4,7 @@ import com.example.demo.domain.Member;
 import com.example.demo.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.OptionalInt;
@@ -19,6 +20,12 @@ public class MemberService {
     //회원가입(등록)_save : db에 insert/update 시키는 기능
     public void create(Member member){
         memberRepository.save(member);
+    }
+
+    @GetMapping("members")
+    public String memberfindAll(){
+        List<Member> members = memberRepository.findAll();
+        return "member/member-list";
     }
 
     //회원목록조회
