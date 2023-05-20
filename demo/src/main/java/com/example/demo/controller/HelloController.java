@@ -135,6 +135,8 @@ public class HelloController {
         goodbye1.setEmail(hello.getEmail());
         goodbye1.setComments("Thank you");
         return goodbye1;
+
     }
+    //.jsp 파일의 기본경로는 resources/webapp/WEB-INF/views
 
 }
